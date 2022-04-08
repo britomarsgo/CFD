@@ -1,6 +1,6 @@
 /*
-CC-297 - Projeto 3 - SoluÁ„o do Potencial Tr‚nsonico Completo
-Programa Desenvolvido por : Alisson Vinicius Brito Lopes
+Project 3 - Transonic flow computation over an NACA Airfoil
+Computer code written by Alisson Vinicius Brito Lopes
 */
 
 // Include das principais bibliotecas do C/C++
@@ -205,7 +205,7 @@ class PotFlow02 {
     int IMAX, JMAX, ILE, ITE;
     double XSF, YSF;
 
-// Criando ponteiro duplos e simples para AlocaÁ„o din‚mica de memoria e "zeramento" de vetores e matrizes na memoria do computador
+// Criando ponteiro duplos e simples para Aloca√ß√£o din√¢mica de memoria e "zeramento" de vetores e matrizes na memoria do computador
 
     double **f, **g,**DELTAPhi,**Phi,**LPhi, **Cij;
 
@@ -232,7 +232,7 @@ void inicializaMatriz_Ucampo(int IMAX, int JMAX){ // MATRIX DE RESIDUOS
         Ucampo[i] = new double[JMAX];
     }
 
-    // Inicializando a matriz com as condiÁıes de contorno de : Entrada, superior e saÌda
+    // Inicializando a matriz com as condi√ß√µes de contorno de : Entrada, superior e sa√≠da
 
     for (i = 0; i < IMAX; i++){
          for (j = 0; j < JMAX; j++){
@@ -251,7 +251,7 @@ void inicializaMatriz_rhocampo(int IMAX, int JMAX){ // MATRIX DE RESIDUOS
         rhocampo[i] = new double[JMAX];
     }
 
-    // Inicializando a matriz com as condiÁıes de contorno de : Entrada, superior e saÌda
+    // Inicializando a matriz com as condi√ß√µes de contorno de : Entrada, superior e sa√≠da
 
     for (i = 0; i < IMAX; i++){
          for (j = 0; j < JMAX; j++){
@@ -307,7 +307,7 @@ void inicializaMatriz_Phi(int IMAX, int JMAX,double Uinf,double gamma, double th
         Phi [i] = new double[JMAX];
     }
 
-    // Inicializando a matriz com as condiÁıes de contorno de : Entrada, superior e saÌda
+    // Inicializando a matriz com as condi√ß√µes de contorno de : Entrada, superior e sa√≠da
 
     for (i = 0; i < IMAX; i++){
          for (j = 0; j < JMAX; j++){
@@ -419,7 +419,7 @@ void inicializaMatriz_LPhi(int IMAX, int JMAX){
         LPhi [i] = new double[JMAX];
     }
 
-    // Inicializando a matriz com as condiÁıes de contorno de : Entrada, superior e saÌda
+    // Inicializando a matriz com as condi√ß√µes de contorno de : Entrada, superior e sa√≠da
 
     for (i = 0; i < IMAX; i++){
          for (j = 0; j < JMAX; j++){
@@ -438,7 +438,7 @@ void inicializaMatriz_Cij(int IMAX, int JMAX){ // UPDATE Zerando e ja assumindo 
         Cij [i] = new double[JMAX];
     }
 
-    // Inicializando a matriz com as condiÁıes de contorno de : Entrada, superior e saÌda
+    // Inicializando a matriz com as condi√ß√µes de contorno de : Entrada, superior e sa√≠da
 
     for (i = 0; i < IMAX; i++){
          for (j = 0; j < JMAX; j++){
@@ -481,7 +481,7 @@ void inicializaMatriz_x(int IMAX, int JMAX){ // MATRIX DE RESIDUOS
         x[i] = new double[JMAX];
     }
 
-    // Inicializando a matriz com as condiÁıes de contorno de : Entrada, superior e saÌda
+    // Inicializando a matriz com as condi√ß√µes de contorno de : Entrada, superior e sa√≠da
 
     for (i = 0; i < IMAX; i++){
          for (j = 0; j < JMAX; j++){
@@ -500,7 +500,7 @@ void inicializaMatriz_y(int IMAX, int JMAX){ // MATRIX DE RESIDUOS
         y[i] = new double[JMAX];
     }
 
-    // Inicializando a matriz com as condiÁıes de contorno de : Entrada, superior e saÌda
+    // Inicializando a matriz com as condi√ß√µes de contorno de : Entrada, superior e sa√≠da
 
     for (i = 0; i < IMAX; i++){
          for (j = 0; j < JMAX; j++){
@@ -510,7 +510,7 @@ void inicializaMatriz_y(int IMAX, int JMAX){ // MATRIX DE RESIDUOS
 }
 
 
-// Inicializando e alocando espaÁo para as variaveis calculadas no algoritmo de Thomas
+// Inicializando e alocando espa√ßo para as variaveis calculadas no algoritmo de Thomas
 void inicializaMatriz_AT( int IMAX){
    int j;
 
@@ -559,7 +559,7 @@ void inicializaMatriz_DT( int IMAX){
 void inicializaMatriz_ATX( int IMAX){
    int j;
 
-    ATX = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI«’ES
+    ATX = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI√á√ïES
 
     for (j = 0; j < IMAX; j++){
 
@@ -570,7 +570,7 @@ void inicializaMatriz_ATX( int IMAX){
 void inicializaMatriz_BTX( int IMAX){
    int j;
 
-    BTX = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI«’ES
+    BTX = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI√á√ïES
 
     for (j = 0; j < IMAX; j++){
 
@@ -581,7 +581,7 @@ void inicializaMatriz_BTX( int IMAX){
 void inicializaMatriz_CTX( int IMAX){
    int j;
 
-    CTX = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI«’ES
+    CTX = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI√á√ïES
 
     for (j = 0; j < IMAX; j++){
 
@@ -592,7 +592,7 @@ void inicializaMatriz_CTX( int IMAX){
 void inicializaMatriz_VT( int IMAX){
    int j;
 
-    VT = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI«’ES
+    VT = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI√á√ïES
 
     for (j = 0; j <IMAX; j++){
 
@@ -604,7 +604,7 @@ void inicializaMatriz_VT( int IMAX){
 void inicializaMatriz_ATY( int IMAX){
    int j;
 
-    ATY = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI«’ES
+    ATY = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI√á√ïES
 
     for (j = 0; j < IMAX; j++){
 
@@ -615,7 +615,7 @@ void inicializaMatriz_ATY( int IMAX){
 void inicializaMatriz_BTY( int IMAX){
    int j;
 
-    BTY = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI«’ES
+    BTY = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI√á√ïES
 
     for (j = 0; j < IMAX; j++){
 
@@ -626,7 +626,7 @@ void inicializaMatriz_BTY( int IMAX){
 void inicializaMatriz_CTY( int IMAX){
    int j;
 
-    CTY = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI«’ES
+    CTY = new double [IMAX]; // VER AO CERTO ESSA QUANTIDADE DE POSI√á√ïES
 
     for (j = 0; j < IMAX; j++){
 
@@ -634,7 +634,7 @@ void inicializaMatriz_CTY( int IMAX){
     }
 }
 
-// Matriz dos Coeficientes da EquaÁ„o 1
+// Matriz dos Coeficientes da Equa√ß√£o 1
 void inicializaMatriz_A(int IMAX, int JMAX){
 
   int i, j;
@@ -714,7 +714,7 @@ void inicializaMatriz_AMX(int IMAX, int JMAX){ // UPDATE Zerando e ja assumindo 
         AMX[i] = new double[IMAX];
     }
 
-    // Inicializando a matriz com as condiÁıes de contorno de : Entrada, superior e saÌda
+    // Inicializando a matriz com as condi√ß√µes de contorno de : Entrada, superior e sa√≠da
 
     for (i = 0; i < IMAX; i++){
          for (j = 0; j < IMAX; j++){
@@ -733,7 +733,7 @@ void inicializaMatriz_AMY(int IMAX, int JMAX){ // UPDATE Zerando e ja assumindo 
         AMY[i] = new double[IMAX];
     }
 
-    // Inicializando a matriz com as condiÁıes de contorno de : Entrada, superior e saÌda
+    // Inicializando a matriz com as condi√ß√µes de contorno de : Entrada, superior e sa√≠da
 
     for (i = 0; i < IMAX; i++){
          for (j = 0; j < IMAX; j++){
@@ -753,7 +753,7 @@ void inicializaMatriz_f(int IMAX, int JMAX){ // MATRIX DE RESIDUOS
         f[i] = new double[JMAX];
     }
 
-    // Inicializando a matriz com as condiÁıes de contorno de : Entrada, superior e saÌda
+    // Inicializando a matriz com as condi√ß√µes de contorno de : Entrada, superior e sa√≠da
 
     for (i = 0; i < IMAX; i++){
          for (j = 0; j < JMAX; j++){
@@ -772,7 +772,7 @@ void inicializaMatriz_g(int IMAX, int JMAX){ // MATRIX DE RESIDUOS
         g[i] = new double[JMAX];
     }
 
-    // Inicializando a matriz com as condiÁıes de contorno de : Entrada, superior e saÌda
+    // Inicializando a matriz com as condi√ß√µes de contorno de : Entrada, superior e sa√≠da
 
     for (i = 0; i < IMAX; i++){
          for (j = 0; j < JMAX; j++){
@@ -791,7 +791,7 @@ void inicializaMatriz_DELTAPhi(int IMAX, int JMAX){ // MATRIX DE RESIDUOS
         DELTAPhi[i] = new double[JMAX];
     }
 
-    // Inicializando a matriz com as condiÁıes de contorno de : Entrada, superior e saÌda
+    // Inicializando a matriz com as condi√ß√µes de contorno de : Entrada, superior e sa√≠da
 
     for (i = 0; i < IMAX; i++){
          for (j = 0; j < JMAX; j++){
@@ -800,7 +800,7 @@ void inicializaMatriz_DELTAPhi(int IMAX, int JMAX){ // MATRIX DE RESIDUOS
     }
 }
 
-// INICIALIZA TERMOS DE M…TRICA A1 , A2 E A3
+// INICIALIZA TERMOS DE M√âTRICA A1 , A2 E A3
 void inicializaMatriz_A1(int IMAX, int JMAX, int nDim){
 
   int i, j, k;
@@ -1068,25 +1068,25 @@ void inicializarMatrizes(int IMAX, int JMAX,int nDim, double Uinf,double gamma, 
 
     inicializaMatriz_rho(IMAX,JMAX,nDim);
 
-    // Variaveis A, B, C, D, P, Q da EquaÁ„o 1 Escritas no espaÁo Computacional
+    // Variaveis A, B, C, D, P, Q da Equa√ß√£o 1 Escritas no espa√ßo Computacional
     inicializaMatriz_A(IMAX,JMAX);
     inicializaMatriz_B(IMAX,JMAX);
     inicializaMatriz_C(IMAX,JMAX);
     inicializaMatriz_D(IMAX,JMAX);
 
-    // InicializaÁ„o para o Algoritmo de THOMAS
+    // Inicializa√ß√£o para o Algoritmo de THOMAS
     inicializaMatriz_AT(IMAX);
     inicializaMatriz_BT(IMAX);
     inicializaMatriz_CT(IMAX);
     inicializaMatriz_DT(IMAX);
 
-    // InicializaÁ„o para periodica em X
+    // Inicializa√ß√£o para periodica em X
     inicializaMatriz_ATX(IMAX);
     inicializaMatriz_BTX(IMAX);
     inicializaMatriz_CTX(IMAX);
     inicializaMatriz_VT(IMAX);
 
-    // InicializaÁ„o para periodica em Y
+    // Inicializa√ß√£o para periodica em Y
     inicializaMatriz_ATY(IMAX);
     inicializaMatriz_BTY(IMAX);
     inicializaMatriz_CTY(IMAX);
@@ -1094,7 +1094,7 @@ void inicializarMatrizes(int IMAX, int JMAX,int nDim, double Uinf,double gamma, 
     inicializaMatriz_x(IMAX,JMAX);
     inicializaMatriz_y(IMAX,JMAX);
 
-    // Inicializando variaveis para GeraÁ„o da PotFlow02 Local de referencia
+    // Inicializando variaveis para Gera√ß√£o da PotFlow02 Local de referencia
     inicializaMatriz_Rx(JMAX);
     inicializaMatriz_Ry(JMAX);
 
@@ -1104,19 +1104,19 @@ void inicializarMatrizes(int IMAX, int JMAX,int nDim, double Uinf,double gamma, 
     inicializaMatriz_f(IMAX,JMAX);
     inicializaMatriz_g(IMAX,JMAX);
 
-    inicializaMatriz_DELTAPhi(IMAX,JMAX); // PARA CORRE«√O DO POTENCIAL
+    inicializaMatriz_DELTAPhi(IMAX,JMAX); // PARA CORRE√á√ÉO DO POTENCIAL
 
     // POTENCIAL EM DOMINIO COMPUTACIONAL
     inicializaMatriz_Phi(IMAX,JMAX,Uinf,gamma,theta);
     inicializaMatriz_Phiqsi(IMAX, JMAX, nDim,Uinf,gamma);
     inicializaMatriz_Phieta(IMAX, JMAX, nDim,Uinf,gamma);
 
-    // Matrizes de 3 Dimensıes
+    // Matrizes de 3 Dimens√µes
     inicializaMatriz_rho(IMAX,JMAX,nDim);
     inicializaMatriz_rhobarra(IMAX,JMAX,nDim);
     inicializaMatriz_rhotil(IMAX,JMAX,nDim);
 
-      // Matrizes de 3 Dimensıes
+      // Matrizes de 3 Dimens√µes
     inicializaMatriz_Bbarra(IMAX,JMAX,nDim);
     inicializaMatriz_Btil(IMAX,JMAX,nDim);
 
@@ -1127,7 +1127,7 @@ void inicializarMatrizes(int IMAX, int JMAX,int nDim, double Uinf,double gamma, 
     inicializaMatriz_U(IMAX,JMAX,nDim);
     inicializaMatriz_V(IMAX,JMAX,nDim);
 
-   // INICIALIZA«√O DOS TERMOS DO POTENCIAL
+   // INICIALIZA√á√ÉO DOS TERMOS DO POTENCIAL
     inicializaMatriz_LPhi(IMAX,JMAX);
     inicializaMatriz_Cij(IMAX,JMAX);
 
@@ -1177,12 +1177,12 @@ void AlfaSequence (int Melements, double alfaLow, double alfaHigh,double *alfaa)
 
 int main(int argc, char*argv[]){
 
-int i,j,jj,kiter=1; // i direÁ„o csi e j direÁ„o eta
-double theta = 0.0; // Para ImplementaÁ„o de ‚ngulo de ataque
+int i,j,jj,kiter=1; // i dire√ß√£o csi e j dire√ß√£o eta
+double theta = 0.0; // Para Implementa√ß√£o de √¢ngulo de ataque
 
-int IMAX = 93; // N˙mero maximo de pontos na direÁ„o Csi >> i default 93 e 15
-int JMAX = 15; // N˙mero maximo de pontos na direÁ„o Eta >> j
-int nDim = 3; // N˙mero de dimensıes do Vetor/Matrix
+int IMAX = 93; // N√∫mero maximo de pontos na dire√ß√£o Csi >> i default 93 e 15
+int JMAX = 15; // N√∫mero maximo de pontos na dire√ß√£o Eta >> j
+int nDim = 3; // N√∫mero de dimens√µes do Vetor/Matrix
 
 clock_t TempoInicial;
 TempoInicial = clock();
@@ -1196,7 +1196,7 @@ double  resmaxX = 0.0, resmaxY = 0.0;
 int maxit = 2000;
 
 double xqsi, yqsi, xeta, yeta;
-// Vetores para TransformaÁ„o da Matrix para imprimir no formato Fortran (permite impress„o tecplot)
+// Vetores para Transforma√ß√£o da Matrix para imprimir no formato Fortran (permite impress√£o tecplot)
 double* xVet = new double[IMAX*JMAX];
 double* yVet = new double[IMAX*JMAX];
 double* zVet = new double[IMAX*JMAX];
@@ -1204,7 +1204,7 @@ double* zVet = new double[IMAX*JMAX];
 double *resmaxiterPhi, RMAXPHI = 1.0;
 resmaxiterPhi = new double [maxit];
 
-double r = 1.9; // Fator de RelaxaÁ„o do SLOR
+double r = 1.9; // Fator de Relaxa√ß√£o do SLOR
 
 // Iterations parameters AF2
 double Machinf = 0.84;
@@ -1299,7 +1299,7 @@ Pflow = JacMetr (Pflow,i,j,IMAX,JMAX,omega,alfa,xqsi, yqsi,xeta, yeta,gamma, gam
     AlfaSequence(Melements,alfaLow,alfaHigh,alfaa);
 
 
-// LOOP PARA CALCULO E CORRE«√O DO POTENCIAL
+// LOOP PARA CALCULO E CORRE√á√ÉO DO POTENCIAL
 for (kiter = 0; kiter < maxit; kiter ++){
 
     Pflow = VelContra(Pflow,i,jj,IMAX,JMAX,omega,alfa,xqsi,yqsi,xeta,yeta,gamma,gammadiv,ainf,c);
@@ -1339,7 +1339,7 @@ Pflow = PropriedadesEscoamento(Pflow,i,j,IMAX,JMAX,Uinf,ainf);
 //char CplinhaSubBiconvexo[] = "C:/Users/Alisson/Desktop/Doutorado ITA-IEAV/CC297 AZEVEDO/Projeto3/Graficos/Biconvexo/cplinhaSub.txt";
 //WriteFile::writeVetor(Pflow.cplinha,IMAX,CplinhaSubBiconvexo);
 
-//// CALCULO DO CAMPO DE PRESS√O
+//// CALCULO DO CAMPO DE PRESS√ÉO
 //TransMatrixVetorTriplo(Pflow.x,Pflow.y,Pflow.cp,IMAX,JMAX,xVet,yVet,zVet);
 //char CampocpSubBiconvexo[] = "C:/Users/Alisson/Desktop/Doutorado ITA-IEAV/CC297 AZEVEDO/Projeto3/Graficos/Biconvexo/CampocpBiSub.plt";
 //WriteFile::writeVetAgrup1(xVet,yVet,zVet,(IMAX*JMAX),CampocpSubBiconvexo);
@@ -1372,7 +1372,7 @@ WriteFile::writeVetor(resmaxiterPhi,maxit,ResiduoBiconvexo);
 //char CplinhaBiconvexo[] = "C:/Users/Alisson/Desktop/Doutorado ITA-IEAV/CC297 AZEVEDO/Projeto3/Graficos/Biconvexo/cplinhaSup.txt";
 //WriteFile::writeVetor(Pflow.cplinha,IMAX,CplinhaBiconvexo);
 //
-// //CALCULO DO CAMPO DE PRESS√O
+// //CALCULO DO CAMPO DE PRESS√ÉO
 //TransMatrixVetorTriplo(Pflow.x,Pflow.y,Pflow.cp,IMAX,JMAX,xVet,yVet,zVet);
 //char CampocpSuperBiconvexo[] = "C:/Users/Alisson/Desktop/Doutorado ITA-IEAV/CC297 AZEVEDO/Projeto3/Graficos/Biconvexo/CampocpBiSuper.plt";
 //WriteFile::writeVetAgrup1(xVet,yVet,zVet,(IMAX*JMAX),CampocpSuperBiconvexo);
@@ -1406,7 +1406,7 @@ WriteFile::writeVetor(resmaxiterPhi,maxit,ResiduoBiconvexo);
 //char CplinhasubNACA[] = "C:/Users/Alisson/Desktop/Doutorado ITA-IEAV/CC297 AZEVEDO/Projeto3/Graficos/NACA/cplinhaNACA.txt";
 //WriteFile::writeVetor(Pflow.cplinha,IMAX,CplinhasubNACA);
 //
-//// CALCULO DO CAMPO DE PRESS√O
+//// CALCULO DO CAMPO DE PRESS√ÉO
 //TransMatrixVetorTriplo(Pflow.x,Pflow.y,Pflow.cp,IMAX,JMAX,xVet,yVet,zVet);
 //char CampocpSubNACA[] = "C:/Users/Alisson/Desktop/Doutorado ITA-IEAV/CC297 AZEVEDO/Projeto3/Graficos/CampocpSubNACA.plt";
 //WriteFile::writeVetAgrup1(xVet,yVet,zVet,(IMAX*JMAX),CampocpSubNACA);
@@ -1432,7 +1432,7 @@ WriteFile::writeVetor(resmaxiterPhi,maxit,ResiduoBiconvexo);
 //char CplinhaNACA[] = "C:/Users/Alisson/Desktop/Doutorado ITA-IEAV/CC297 AZEVEDO/Projeto3/Graficos/NACA/cplinhaNACAc18.txt";
 //WriteFile::writeVetor(Pflow.cplinha,IMAX,CplinhaNACA);
 //
-//// CALCULO DO CAMPO DE PRESS√O
+//// CALCULO DO CAMPO DE PRESS√ÉO
 //TransMatrixVetorTriplo(Pflow.x,Pflow.y,Pflow.cp,IMAX,JMAX,xVet,yVet,zVet);
 //char CampocpSuperNACA[] = "C:/Users/Alisson/Desktop/Doutorado ITA-IEAV/CC297 AZEVEDO/Projeto3/Graficos/NACA/CampocpSuperNACA.plt";
 //WriteFile::writeVetAgrup1(xVet,yVet,zVet,(IMAX*JMAX),CampocpSuperNACA);
@@ -1454,8 +1454,8 @@ WriteFile::writeVetor(resmaxiterPhi,maxit,ResiduoBiconvexo);
 
 double tempo_total_s = (clock()- TempoInicial)/(double)CLOCKS_PER_SEC;
 cout << "Tempo Total de Execucao (segundos) = " << tempo_total_s << endl;
-cout << "Numero Total de IteraÁıes = " <<kiter<<endl;
-cout << " Tempo por IteraÁ„o" << tempo_total_s /kiter << endl;
+cout << "Numero Total de Itera√ß√µes = " <<kiter<<endl;
+cout << " Tempo por Itera√ß√£o" << tempo_total_s /kiter << endl;
 
 return 0;
 
@@ -1470,7 +1470,7 @@ PotFlow02 JacMetr (PotFlow02 Pflow,int i, int j, int IMAX, int JMAX, double omeg
 
     int jj,r,s;
 
-for (jj = 0; jj<=JMAX-2; jj++){ // DA FRONTEIRA EXTERNA AT… JMAX-2 (ANTES DA PAREDE)
+for (jj = 0; jj<=JMAX-2; jj++){ // DA FRONTEIRA EXTERNA AT√â JMAX-2 (ANTES DA PAREDE)
 
     for (i = 0; i<=IMAX-2; i++){
 
@@ -1578,7 +1578,7 @@ for (jj = 0; jj<=JMAX-2; jj++){ // DA FRONTEIRA EXTERNA AT… JMAX-2 (ANTES DA PAR
 }
 
 // CALCULO DE TODOS OS TERMOS EM JMAX-1 (NA PAREDE !!!)
-jj = JMAX-1; // Na parede n„o precisa calcular os pontos em i,j+1/2
+jj = JMAX-1; // Na parede n√£o precisa calcular os pontos em i,j+1/2
 
 for (i = 0; i<=IMAX-2; i++){
 
@@ -1596,9 +1596,9 @@ for (i = 0; i<=IMAX-2; i++){
     xeta = 0.5*(Pflow.x[i][jj] - Pflow.x[i][jj-1]);
     yeta = 0.5*(Pflow.y[i][jj] - Pflow.y[i][jj-1]);
 
-        // i,j usando one-sided de trÍs pontos
-    //xeta = 0.5*(3*Pflow.x[i][jj] - 4*Pflow.x[i][jj-1] + Pflow.x[i][jj-2]); //operador one-sided de trÍs pontos
-    //yeta = 0.5*(3*Pflow.y[i][jj] - 4*Pflow.y[i][jj-1] + Pflow.y[i][jj-2]); //operador one-sided de trÍs pontos
+        // i,j usando one-sided de tr√™s pontos
+    //xeta = 0.5*(3*Pflow.x[i][jj] - 4*Pflow.x[i][jj-1] + Pflow.x[i][jj-2]); //operador one-sided de tr√™s pontos
+    //yeta = 0.5*(3*Pflow.y[i][jj] - 4*Pflow.y[i][jj-1] + Pflow.y[i][jj-2]); //operador one-sided de tr√™s pontos
 
     // i+1/2,j
     xqsi_imeio = (Pflow.x[i+1][jj] - Pflow.x[i][jj]);
@@ -1607,12 +1607,12 @@ for (i = 0; i<=IMAX-2; i++){
     xeta_imeio = Pflow.x[i][jj] - Pflow.x[i][jj-1];
     yeta_imeio = Pflow.y[i][jj] - Pflow.y[i][jj-1];
 
-    // operando one-sided de trÍs pontos
-//    xeta_imeio = 0.5*(3*Pflow.x[i][jj] - 4*Pflow.x[i][jj-1] + Pflow.x[i][jj-2]); //operador one-sided de trÍs pontos
-//    yeta_imeio = 0.5*(3*Pflow.y[i][jj] - 4*Pflow.y[i][jj-1] + Pflow.y[i][jj-2]); //operador one-sided de trÍs pontos
+    // operando one-sided de tr√™s pontos
+//    xeta_imeio = 0.5*(3*Pflow.x[i][jj] - 4*Pflow.x[i][jj-1] + Pflow.x[i][jj-2]); //operador one-sided de tr√™s pontos
+//    yeta_imeio = 0.5*(3*Pflow.y[i][jj] - 4*Pflow.y[i][jj-1] + Pflow.y[i][jj-2]); //operador one-sided de tr√™s pontos
 
     // i,j+1/2
-    // N„o necessita Calcular essa derivada
+    // N√£o necessita Calcular essa derivada
 
     Pflow.J[i][jj][0] = 1.0/(xqsi*yeta - xeta*yqsi); // i,j
     Pflow.J[i][jj][1] = 1.0/(xqsi_imeio*yeta_imeio - xeta_imeio*yqsi_imeio); // i+1/2,j
@@ -1750,12 +1750,12 @@ for (i = 0; i<=IMAX-2; i++){
 
    }
 
-    // Acho que n„o precisa calcular
+    // Acho que n√£o precisa calcular
     Pflow.Phiqsi[i][jj][1] = Pflow.Phi[i+1][jj] - Pflow.Phi[i][jj];
     Pflow.Phiqsi[i][jj][2] = Pflow.Phi[i][jj] - Pflow.Phi[i][jj-1];  // i,j+1/2 Utilizar um operador one-sided ou backward na parede
 
     Pflow.Phieta[i][jj][0] = -(Pflow.A2[i][jj][0]/Pflow.A3[i][jj][0])*Pflow.Phiqsi[i][jj][0]; // Phieta em i,JMAX  (Vi,jmax) = ( A2phiqsi + A3phieta) = 0;
-    // Acho que n„o precisa calcular
+    // Acho que n√£o precisa calcular
     Pflow.Phieta[i][jj][1] = -(Pflow.A2[i][jj][1]/Pflow.A3[i][jj][1])*Pflow.Phiqsi[i][jj][1]; // Phieta em i,JMAX  (Vi,jmax) = ( A2phiqsi + A3phieta) = 0;
     Pflow.Phieta[i][jj][2] = Pflow.Phi[i][jj] - Pflow.Phi[i][jj-1];
 
@@ -1773,7 +1773,7 @@ for (i = 0; i<=IMAX-2; i++){
     Pflow.Phiqsi[IMAX-1][jj][0] = Pflow.Phiqsi[0][jj][0];
     Pflow.Phieta[IMAX-1][jj][0] = Pflow.Phieta[0][jj][0];
 
-   // ATUALIZA«√O DA ESTEIRA EM i = 0 E I = IMAX-1
+   // ATUALIZA√á√ÉO DA ESTEIRA EM i = 0 E I = IMAX-1
     Pflow.V[IMAX-1][jj][0] = Pflow.V[0][jj][0]; // i,j
     Pflow.V[IMAX-1][jj][1] = Pflow.V[0][jj][1]; // i+1/2,j
     Pflow.V[IMAX-1][jj][2] = - Pflow.V[0][jj-1][1]; // V[i][JMAX-2][1] = V[i][JMAX-1][-1/2] //i,j+1/2
@@ -1829,14 +1829,14 @@ for (jj = 0; jj<=JMAX-1; jj++){
 
     for(i=0;i<=IMAX-2;i++){
 
-    int r = Rparametro(Pflow,i,jj); // DireÁ„o preferencialmente Upwind
-    int s = Sparametro(Pflow,i,jj); // DireÁ„o preferencialmente Upwind
+    int r = Rparametro(Pflow,i,jj); // Dire√ß√£o preferencialmente Upwind
+    int s = Sparametro(Pflow,i,jj); // Dire√ß√£o preferencialmente Upwind
 
     double vi = vimaismeio(Pflow,i,jj,c);
     double vj = vjmaismeio(Pflow,i,jj,c,JMAX);
 
     if (i==0 && r==-1){
-    Pflow.rhotil[i][jj][1] = (1.0 - vimaismeio(Pflow,i,jj,c))*Pflow.rho[i][jj][1] + vimaismeio(Pflow,i,jj,c)*Pflow.rho[IMAX-2][jj][1]; // if i==0 e r==-1 tenho que pegar a posiÁ„o IMAX-1
+    Pflow.rhotil[i][jj][1] = (1.0 - vimaismeio(Pflow,i,jj,c))*Pflow.rho[i][jj][1] + vimaismeio(Pflow,i,jj,c)*Pflow.rho[IMAX-2][jj][1]; // if i==0 e r==-1 tenho que pegar a posi√ß√£o IMAX-1
     }else {
     Pflow.rhotil[i][jj][1] = (1.0 - vimaismeio(Pflow,i,jj,c) )*Pflow.rho[i][jj][1] + vimaismeio(Pflow,i,jj,c)*Pflow.rho[i+r][jj][1];
     }
@@ -1876,12 +1876,12 @@ return Pflow;
 
 PotFlow02 Residuo (PotFlow02 Pflow,int i, int j, int IMAX, int JMAX, double omega, double alfa, double xqsi, double yqsi, double xeta, double yeta, double gamma, double gammadiv, double ainf){
 
-// STEP 1 PODE SER RESOLVIDO POR ELIMINA«√O DE GAUSS MAS VOU TENTAR USAR O SOLVER DE TRIDIAGONAL SIMPLES
+// STEP 1 PODE SER RESOLVIDO POR ELIMINA√á√ÉO DE GAUSS MAS VOU TENTAR USAR O SOLVER DE TRIDIAGONAL SIMPLES
 for (int i = 0; i<=IMAX-2; i++){
 
     for (int jj = 1; jj <=JMAX-1; jj++){
 
-        if(jj== JMAX-1){ // CALCULO DO RESIDUO NA PAREDE … DIFERENTE
+        if(jj== JMAX-1){ // CALCULO DO RESIDUO NA PAREDE √â DIFERENTE
             if(i==0){
             Pflow.LPhi[i][jj] = (Pflow.rhotil[i][jj][1]*Pflow.U[i][jj][1]/Pflow.J[i][jj][1]) -(Pflow.rhotil[IMAX-2][jj][1]*Pflow.U[IMAX-2][jj][1]/Pflow.J[IMAX-2][jj][1])- 2.0*(Pflow.rhobarra[i][jj-1][2]*Pflow.V[i][jj-1][2]/Pflow.J[i][jj-1][2]);
             }else{
@@ -1925,7 +1925,7 @@ for (int i = 0; i<=IMAX-2; i++){
         Pflow.CT [jj-1] = -Pflow.Bbarra[i][jj+1][2] ; // UPPER DIAGONAL
         }
 
-       Pflow.VT[jj-1] = alfa*omega*Pflow.LPhi[i][jj] ; // LADO DIREITO DA EQUA«√O
+       Pflow.VT[jj-1] = alfa*omega*Pflow.LPhi[i][jj] ; // LADO DIREITO DA EQUA√á√ÉO
         if ( jj == 1){
          Pflow.AT[0] = 0.0;
         }
@@ -1970,7 +1970,7 @@ for (int jj = 1; jj<=JMAX-1; jj++){
         for ( int i = 0; i <= IMAX-2; i++){
         Pflow.Phi[i][jj] = Pflow.Cij[i][jj] + Pflow.Phi[i][jj];
         }
-       // correÁ„o para a esteira
+       // corre√ß√£o para a esteira
         Pflow.Phi[IMAX-1][jj] =  Pflow.Phi[0][jj];
 
 }
@@ -1986,10 +1986,10 @@ PotFlow02 AF2alfa (PotFlow02 Pflow,int i, int j, int IMAX, int JMAX, double omeg
     double *y;
     y = new double [IMAX];
 
-    int M = IMAX-2; // VOU DEIXAR IMAX-2 POIS IRA RESOLVER AT… O PENULTIMO PONTO DA PERIODICA
+    int M = IMAX-2; // VOU DEIXAR IMAX-2 POIS IRA RESOLVER AT√â O PENULTIMO PONTO DA PERIODICA
     int n = JMAX-1; // ANTES ERA JMAX-2
 
-// STEP 1 PODE SER RESOLVIDO POR ELIMINA«√O DE GAUSS MAS VOU TENTAR USAR O SOLVER DE TRIDIAGONAL SIMPLES
+// STEP 1 PODE SER RESOLVIDO POR ELIMINA√á√ÉO DE GAUSS MAS VOU TENTAR USAR O SOLVER DE TRIDIAGONAL SIMPLES
 for (int i = 0; i<=IMAX-2; i++){
 
     for (int jj = 1; jj <=JMAX-1; jj++){
@@ -2000,7 +2000,7 @@ for (int i = 0; i<=IMAX-2; i++){
         }else{
         Pflow.CT [jj-1] = -Pflow.Bbarra[i][jj+1][2] ; // UPPER DIAGONAL
         }
-        Pflow.VT[jj-1] = alfa*omega*Pflow.LPhi[i][jj] ; // LADO DIREITO DA EQUA«√O
+        Pflow.VT[jj-1] = alfa*omega*Pflow.LPhi[i][jj] ; // LADO DIREITO DA EQUA√á√ÉO
         if ( jj == 1){
          Pflow.AT[0] = 0.0;
         }
@@ -2096,7 +2096,7 @@ void TridiagPhi(double* a, double* b, double* c, double* dv, double *x, int M){
     f = new double [M];
     g = new double [M];
 
-    for (i =0; i<=M;i++){ // Uma vez que foi alocado dinamicamente (via pointer) È conveniente zerar as posiÁıes alocadas, evitando pegar lixo de m·quina
+    for (i =0; i<=M;i++){ // Uma vez que foi alocado dinamicamente (via pointer) √© conveniente zerar as posi√ß√µes alocadas, evitando pegar lixo de m√°quina
 
         l1[i] = 0.0;
         l2[i] = 0.0;
@@ -2216,10 +2216,10 @@ double Sparametro(PotFlow02 Pflow,int i, int jj){
       }
 }
 
-// !!!! WARNING !!! FAZER ESSE CALCULO USANDO COMO REFER NCIA A DENSIDADE E N√O O NUMERO DE MACH !!!!
+// !!!! WARNING !!! FAZER ESSE CALCULO USANDO COMO REFER√äNCIA A DENSIDADE E N√ÉO O NUMERO DE MACH !!!!
 double vimaismeio(PotFlow02 Pflow,int i, int jj, double c ){
 
-      double c1 = 0.633938, c2 = 4.9325; // c = 1.2 Segundo recomendaÁ„o do HOLST.
+      double c1 = 0.633938, c2 = 4.9325; // c = 1.2 Segundo recomenda√ß√£o do HOLST.
       double A, B, C = 0.0;
 
       if (Pflow.U[i][jj][1] >= 0.0){
